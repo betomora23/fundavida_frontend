@@ -6,6 +6,6 @@ export interface Estudiante {
 
   persona: Persona;
 
-
+  encargado: Persona;
 
 }

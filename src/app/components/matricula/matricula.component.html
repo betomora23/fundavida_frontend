@@ -1,1 +1,113 @@
-<p>matricula works!</p>
+<h2>Información del estudiante</h2>
+<div class="container-fluid py-3">
+  <div class="row my-3">
+    <div class="col">
+      <label for="nombreEstudiante" class="form-label">Nombre:</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.nombre" id="nombreEstudiante" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="apellido1Estudiante" class="form-label">Primer apellido:</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.apellido1" id="apellido1Estudiante" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="apellido2Estudiante" class="form-label">Email address</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.apellido2" id="apellido2Estudiante" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="emailEstudiante" class="form-label">Email address</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.email" id="emailEstudiante" placeholder="nombre@ejemplo.com">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="identificacionEstudiante" class="form-label">Número de identificación</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.identificacion" id="identificacionlEstudiante" placeholder="X-XXXX-XXXX">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="input-group">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Tipo de documento</label>
+      <select class="my-3" ng-bind="matricula.estudiante.tipoIdentificacion">
+        <option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </option>
+      </select>
+    </div><!-- /input-group -->
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="telefonoEstudiante" class="form-label">Número de teléfono:</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.telefono" id="telefonoEstudiante" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="input-group">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Género</label>
+      <select class="my-3" ng-bind="matricula.estudiante.genero">
+        <option *ngFor="let genero of generoKeys" [value]="genero"> {{Genero2LabelMapping[genero]}} </option>
+      </select>
+    </div><!-- /input-group -->
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="fechaNacimientoEstudiante" class="form-label">Fecha de nacimiento:</label>
+      <input type="date" class="form-control form-control-sm" ng-bind="matricula.estudiante.fechaNacimiento" id="fechaNacimientoEstudiante" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="direccionEstudiante" class="form-label">Dirección:</label>
+      <textarea class="form-control form-control-sm" ng-bind="matricula.estudiante.direccion" id="direccionEstudiante" rows="3"></textarea>
+    </div>
+  </div>
+
+  <h2>Información del encargado</h2>
+  <div class="row my-3">
+    <div class="col">
+      <label for="nombreEncargado" class="form-label">Nombre:</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.nombre" id="nombreEncargado" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="apellido1Encargado" class="form-label">Primer apellido:</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.apellido1" id="apellido1Encargado" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="apellido2Encargado" class="form-label">Email address</label>
+      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.apellido2" id="apellido2Encargado" placeholder="">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="emailEncargado" class="form-label">Correo electrónico  del encargado(a):</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.email" id="emailEncargado" placeholder="nombre@ejemplo.com">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="identificacionEncargado" class="form-label">Número de identificación del encargado(a):</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.identificacion" id="identificacionlEncargado" placeholder="X-XXXX-XXXX">
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="input-group">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Tipo de documento  del encargado(a):</label>
+      <select class="my-3" ng-bind="matricula.estudiante.encargado.tipoIdentificacion">
+        <option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </option>
+      </select>
+    </div><!-- /input-group -->
+  </div>
+  <div class="row my-3">
+    <div class="col">
+      <label for="telefonoEncargado" class="form-label">Número de teléfono del encargado(a):</label>
+      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.telefono" id="telefonoEncargado" placeholder="">
+    </div>
+  </div>
+  </div>
