@@ -196,7 +196,7 @@
         <div class="row my-3">
           <mat-form-field class="col">
             <label class="form-label" for="selectPaisEstudiante">Nacionalidad:* </label>
-            <mat-select matInput formControlName="selectPaisEstudiante" id="selectPaisEstudiante" class="selectItems" [(ngModel)]="matricula.estudiante.persona.genero" required>
+            <mat-select matInput formControlName="selectPaisEstudiante" id="selectPaisEstudiante" class="selectItems" [(ngModel)]="matricula.estudiante.persona.nacionalidad" required>
               <mat-option *ngFor="let pais of paises" [value]="pais"> {{pais}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -210,7 +210,7 @@
         <div class="row my-3">
           <mat-form-field class="col">
             <label class="form-label" for="selectorSedes">Seleccione la sede de FundaVida  a la que asistirá el estudiante:* </label>
-            <mat-select matInput formControlName="selectorSedes" id="selectorSedes" class="selectItems" [(ngModel)]="matricula.estudiante.persona.genero" required>
+            <mat-select matInput formControlName="selectorSedes" id="selectorSedes" class="selectItems" [(ngModel)]="matricula.sede" required>
               <mat-option *ngFor="let sede of sedes" [value]="sede"> {{sede.descripcion}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -405,25 +405,14 @@
         </div>
       </form>
     </div>
-
     <div>
       <mat-grid-list cols="3" rowHeight="40px">
         <mat-grid-tile [colspan]="1" [rowspan]="1">
         </mat-grid-tile>
         <mat-grid-tile [colspan]="1" [rowspan]="1">
           <div class="navegacion">
-            <mat-grid-list cols="3" rowHeight="40px">
-              <mat-grid-tile [colspan]="1" [rowspan]="1">
-              </mat-grid-tile>
-              <mat-grid-tile [colspan]="1" [rowspan]="1">
-                <div class="navegacion">
-                  <button mat-raised-button matStepperPrevious>Anterior</button>
-                  <button mat-raised-button matStepperNext>Siguiente</button>
-                </div>
-              </mat-grid-tile>
-              <mat-grid-tile [colspan]="1" [rowspan]="1">
-              </mat-grid-tile>
-            </mat-grid-list>
+            <button mat-raised-button matStepperPrevious>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
           </div>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="1" [rowspan]="1">
@@ -446,7 +435,7 @@
         <div class="row my-3">
           <mat-form-field class="col">
             <label for="motivoIngreso" class="form-label">¿Cuéntenos por qué quiere estar en FundaVida?*</label>
-            <textarea matInput formControlName="motivoIngreso" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.direccion" id="motivoIngreso" rows="3" required></textarea>
+            <textarea matInput formControlName="motivoIngreso" class="form-control form-control-sm" [(ngModel)]="matricula.notasIngreso" id="motivoIngreso" rows="3" required></textarea>
           </mat-form-field>
         </div>
 
