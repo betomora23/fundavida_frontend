@@ -26,6 +26,7 @@
               "src/cropped-fundavida_favicon-180x180.png",
               "src/cropped-fundavida_favicon-192x192.png",
               "src/web.config",
+              "src/routes.json",
               "src/assets"
             ],
             "styles": [
