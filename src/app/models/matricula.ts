@@ -15,14 +15,22 @@ export interface Matricula {
 
   sede: Sede;
 
+  gradoCursa: string;
+
+  notasIngreso: string;
+
+  convocatoria: boolean;
+
+  anhoIngreso: string;
+
   centroEducativo: CentroEducativo;
 
   matriculaPrograma: MatriculaPrograma[];
 
-  convocatoria: boolean;
-
   materiasConvocatoria: Materia[];
 
   necesidadesEducativas: NecesidadEducativa[];
+
+
 
 }

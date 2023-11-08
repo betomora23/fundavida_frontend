@@ -18,7 +18,11 @@ export interface Persona {
 
         notas: string;
 
-        telefono: string;
+  telefono: string;
+
+  telefono2: string;
+
+        lateralidad: string;
 
         genero: Genero;
 

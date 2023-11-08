@@ -1,4 +1,4 @@
-export interface NecesidadEducativa {
+export interface Opcion {
   id: number;
   descripcion: string;
   checked: boolean;

@@ -1,113 +1,472 @@
-<h2>Información del estudiante</h2>
-<div class="container-fluid py-3">
-  <div class="row my-3">
-    <div class="col">
-      <label for="nombreEstudiante" class="form-label">Nombre:</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.nombre" id="nombreEstudiante" placeholder="">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="apellido1Estudiante" class="form-label">Primer apellido:</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.apellido1" id="apellido1Estudiante" placeholder="">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="apellido2Estudiante" class="form-label">Email address</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.apellido2" id="apellido2Estudiante" placeholder="">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="emailEstudiante" class="form-label">Email address</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.email" id="emailEstudiante" placeholder="nombre@ejemplo.com">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="identificacionEstudiante" class="form-label">Número de identificación</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.identificacion" id="identificacionlEstudiante" placeholder="X-XXXX-XXXX">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="input-group">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Tipo de documento</label>
-      <select class="my-3" ng-bind="matricula.estudiante.tipoIdentificacion">
-        <option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </option>
-      </select>
-    </div><!-- /input-group -->
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="telefonoEstudiante" class="form-label">Número de teléfono:</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.telefono" id="telefonoEstudiante" placeholder="">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="input-group">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Género</label>
-      <select class="my-3" ng-bind="matricula.estudiante.genero">
-        <option *ngFor="let genero of generoKeys" [value]="genero"> {{Genero2LabelMapping[genero]}} </option>
-      </select>
-    </div><!-- /input-group -->
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="fechaNacimientoEstudiante" class="form-label">Fecha de nacimiento:</label>
-      <input type="date" class="form-control form-control-sm" ng-bind="matricula.estudiante.fechaNacimiento" id="fechaNacimientoEstudiante" placeholder="">
-    </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="direccionEstudiante" class="form-label">Dirección:</label>
-      <textarea class="form-control form-control-sm" ng-bind="matricula.estudiante.direccion" id="direccionEstudiante" rows="3"></textarea>
-    </div>
-  </div>
+<mat-stepper linear #stepper>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Pre-Matricula</ng-template>
+    <div class="container matriculaContainer" style="">
+      <h2>Pre- Matrícula Extraordinaria {{periodo.anho}}  Fundación FundaVida</h2>
+      <div class="centrado">
+        <img src="/assets/images/logo_cr11.jpg" class="fundalogo" />
+      </div>
 
-  <h2>Información del encargado</h2>
-  <div class="row my-3">
-    <div class="col">
-      <label for="nombreEncargado" class="form-label">Nombre:</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.nombre" id="nombreEncargado" placeholder="">
+      <br />
+      <br />
+      <span>
+        Al llenar este formulario, el o la participante quedará en lista de espera para optar por un cupo en los programas de la fundación.
+        El llenarlo no garantiza ser seleccionado(a). Lea con atención antes de empezar.
+
+        Al finalizar, deberá unirse a un chat de Whatsapp donde se publicará la lista de estudiantes admitidos.
+      </span>
+
     </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="apellido1Encargado" class="form-label">Primer apellido:</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.apellido1" id="apellido1Encargado" placeholder="">
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="apellido2Encargado" class="form-label">Email address</label>
-      <input type="text" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.apellido2" id="apellido2Encargado" placeholder="">
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Fundavida</ng-template>
+    <div class="container matriculaContainer" style="">
+      <h2>¿Qué hacemos?</h2>
+      <p>
+        FundaVida empodera niños, niñas y jóvenes a través de 5 programas educativos para aumentar sus oportunidades laborales y traer esperanza a sus comunidades.
+        Los cursos y talleres son totalmente  gratuitos para los participantes.
+
+        Estos son los programas:
+      </p>
+      <br />
+      <h3>Programa Jóvenes con Propósito</h3>
+      <p>
+        Acompañamos a los jóvenes brindándoles mentorías y charlas para nutrir su crecimiento personal y profesional.
+        Modalidad: presencial
+        Grado: sexto en adelante
+        No tiene cupo limitado, puede ingresar en cualquier momento del año.
+      </p>
+
+      <br />
+      <h3>Programa Centros Interactivos</h3>
+      <p>
+        Talleres de computación, robótica, programación, diseño gráfico e impresion 3D.
+        Modalidad: presencial y virtual
+        Grado: transición en adelante
+        Cupo limitado para algunas edades.
+      </p>
+      <br />
+      <h3>Programa de Psicología</h3>
+      <p>
+        Consulta psicológica  y terapéutica exclusivamente para estudiantes admitidos en FundaVida.
+        Modalidad: presencial
+        Este programa tiene cupo limitado.
+      </p>
+      <br />
+      <h3>Programa Apoyo Educativo</h3>
+      <p>
+        Tutores ayudan a reforzar las materias de la escuela y colegio.
+        Modalidad: presencial
+        Grado: primero en adelante
+        Este programa tiene cupo limitado.
+      </p>
+      <br />
+      <h3>Programa de Inglés</h3>
+      <p>
+        Los y las participantes adquieren las habilidades necesarias para ser bilingües.
+        Modalidad: presencial y virtual
+        Grados: transición en adelante
+        Este programa tiene cupo limitado.
+      </p>
     </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="emailEncargado" class="form-label">Correo electrónico  del encargado(a):</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.email" id="emailEncargado" placeholder="nombre@ejemplo.com">
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperPrevious>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="identificacionEncargado" class="form-label">Número de identificación del encargado(a):</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.identificacion" id="identificacionlEncargado" placeholder="X-XXXX-XXXX">
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Requisitos</ng-template>
+    <div class="container matriculaContainer" style="">
+      <h2>Requisitos para ser admitido en FundaVida</h2>
+      <ul>
+        <li>Vivir en  Hatillo Centro, Alajuelita,  Linda Vista de Patarrá o sus alrededores.</li>
+        <li>Edad mínima: 5 años cumplidos a febrero del {{periodo.anho}}.</li>
+        <li>Estar estudiando en cualquier modalidad: escuela, colegio, IPEC, CINDEA, bachillerato por madurez o  maestro en casa, si es menor de edad.</li>
+        <li>Autorizar la toma de fotografías y videos de los estudiantes mientras participan en los programas.</li>
+        <li>Presentar el informe final de aprovechamiento o nota del año {{periodo.anho-1}} dada por el centro educativo de manera  impresa.</li>
+        <li>Presentar comprobante con al menos 2 dosis de vacuna contra COVID19.</li>
+        <li>Ofrecemos capacitación tecnológica e inglés para mayores de edad. Si está interesado(a), debe llenar el formulario.</li>
+      </ul>
+      <span class="negrita">
+        Si el o la participante cumple lo anterior, complete el formulario
+      </span>
     </div>
-  </div>
-  <div class="row my-3">
-    <div class="input-group">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Tipo de documento  del encargado(a):</label>
-      <select class="my-3" ng-bind="matricula.estudiante.encargado.tipoIdentificacion">
-        <option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </option>
-      </select>
-    </div><!-- /input-group -->
-  </div>
-  <div class="row my-3">
-    <div class="col">
-      <label for="telefonoEncargado" class="form-label">Número de teléfono del encargado(a):</label>
-      <input type="email" class="form-control form-control-sm" ng-bind="matricula.estudiante.encargado.telefono" id="telefonoEncargado" placeholder="">
+
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperNext>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
-  </div>
-  </div>
+  </mat-step>
+  <mat-step [stepControl]="datosEstudiante" [editable]="true">
+    <ng-template matStepLabel>Datos</ng-template>
+    <div class="container matriculaContainer" style="">
+      <form [formGroup]="datosEstudiante">
+        <h2>Datos del estudiante</h2>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="identificacionEstudiante" class="form-label">Número de identificación:*</label>
+            <input matInput formControlName="identificacionEstudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.identificacion" id="identificacionlEstudiante" placeholder="X-XXXX-XXXX" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectTipoId">Tipo de documento:* </label>
+            <mat-select matInput formControlName="selectTipoId" id="selectTipoId" class="selectItems" [(ngModel)]="matricula.estudiante.persona.tipoIdentificacion">
+              <mat-option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="apellido1Estudiante" class="form-label">Primer apellido:</label>
+            <input matInput formControlName="apellido1Estudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.apellido1" id="apellido1Estudiante" placeholder="" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="apellido2Estudiante" class="form-label">Segundo apellido:</label>
+            <input matInput formControlName="apellido2Estudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.apellido2" id="apellido2Estudiante" placeholder="" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="nombreEstudiante" class="form-label">Nombre:</label>
+            <input matInput formControlName="nombreEstudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.nombre" id="nombreEstudiante" placeholder="" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectGenero">Género:* </label>
+            <mat-select matInput formControlName="selectGenero" id="selectGenero" class="selectItems" [(ngModel)]="matricula.estudiante.persona.genero" required>
+              <mat-option *ngFor="let genero of generoKeys" [value]="genero"> {{Genero2LabelMapping[genero]}} </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="emailEstudiante" class="form-label">Correo electrónico</label>
+            <input matInput formControlName="emailEstudiante" type="email" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.email" id="emailEstudiante" placeholder="nombre@ejemplo.com" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="fechaNacimientoEstudiante" class="form-label">Fecha de nacimiento:</label>
+            <input matInput formControlName="fechaNacimientoEstudiante" type="date" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.fechaNacimiento" id="fechaNacimientoEstudiante" placeholder="" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="telefonoEstudiante" class="form-label">Número de teléfono:</label>
+            <input matInput formControlName="telefonoEstudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.telefono" id="telefonoEstudiante" placeholder="" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectPaisEstudiante">Nacionalidad:* </label>
+            <mat-select matInput formControlName="selectPaisEstudiante" id="selectPaisEstudiante" class="selectItems" [(ngModel)]="matricula.estudiante.persona.genero" required>
+              <mat-option *ngFor="let pais of paises" [value]="pais"> {{pais}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="direccionEstudiante" class="form-label">Dirección:</label>
+            <textarea matInput formControlName="direccionEstudiante" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.direccion" id="direccionEstudiante" rows="3"></textarea>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectorSedes">Seleccione la sede de FundaVida  a la que asistirá el estudiante:* </label>
+            <mat-select matInput formControlName="selectorSedes" id="selectorSedes" class="selectItems" [(ngModel)]="matricula.estudiante.persona.genero" required>
+              <mat-option *ngFor="let sede of sedes" [value]="sede"> {{sede.descripcion}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectorLateralidad">Cuál es su mano dominante:* </label>
+            <mat-select matInput formControlName="selectorLateralidad" id="selectorLateralidad" class="selectItems" [(ngModel)]="matricula.estudiante.persona.lateralidad" required>
+              <mat-option value='Derecha'> Derecha</mat-option>
+              <mat-option value='Izquierda'> Izquierda</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <div class="col">
+            <label class="form-label">Seleccione los programas en los que quiere ser admitido:* </label>
+            <div *ngFor="let programa of programas">
+              <mat-checkbox [checked]="programa.checked"> {{programa.title}}</mat-checkbox> <br />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperPrevious>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Encargado</ng-template>
+    <div class="container matriculaContainer" style="">
+      <form [formGroup]="datosEncargado">
+        <p>
+          Información del padre, madre o encargado(a) legal (llenar si  el participante es menor de edad)
+        </p>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="apellido1Encargado" class="form-label">Primer apellido:</label>
+            <input matInput formControlName="apellido1Encargado" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.apellido1" id="apellido1Encargado" placeholder="">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="apellido2Encargado" class="form-label">Segundo apellido:</label>
+            <input matInput formControlName="apellido2Encargado" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.apellido2" id="apellido2Encargado" placeholder="">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="nombreEncargado" class="form-label">Nombre:</label>
+            <input matInput formControlName="nombreEncargado" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.nombre" id="nombreEncargado" placeholder="">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="identificacionEncargado" class="form-label">Número de identificación del encargado(a):</label>
+            <input matInput formControlName="identificacionEncargado" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.identificacion" id="identificacionlEncargado" placeholder="X-XXXX-XXXX">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectTipoIdEncargado">Tipo de documento:* </label>
+            <mat-select matInput formControlName="selectTipoIdEncargado" id="selectTipoIdEncargado" class="selectItems" [(ngModel)]="matricula.estudiante.encargado.tipoIdentificacion">
+              <mat-option *ngFor="let tipoId of tipoIdentificacionKeys" [value]="tipoId"> {{TipoIdentificacion2LabelMapping[tipoId]}} </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="emailEncargado" class="form-label">Correo electrónico  del encargado(a):</label>
+            <input matInput formControlName="emailEncargado" type="email" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.email" id="emailEncargado" placeholder="nombre@ejemplo.com">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="telefonoEncargado" class="form-label">Número de teléfono del encargado(a):</label>
+            <input matInput formControlName="telefonoEncargado" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.telefono" id="telefonoEncargado" placeholder="1234-1234" required>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="telefonoEncargado2" class="form-label">Número de teléfono OPCIONAL del encargado(a):</label>
+            <input matInput formControlName="telefonoEncargado2" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.encargado.telefono2" id="telefonoEncargado2" placeholder="1234-1234">
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperPrevious>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Información Académica</ng-template>
+    <div class="container matriculaContainer" style="">
+      <form [formGroup]="infoAcademica">
+        <h2>Información académica del estudiante</h2>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="infoAcademicaCentro" class="form-label">Escriba el nombre del centro educativo, al que asistirá el o la estudiante en  el curso lectivo {{periodo.anho}}:</label>
+            <input matInput formControlName="infoAcademicaCentro" type="text" class="form-control form-control-sm" [(ngModel)]="centroNombre" id="infoAcademicaCentro" placeholder="">
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectorGrado">Seleccione el grado académico que cursa en el {{periodo.anho}}:* </label>
+            <mat-select matInput formControlName="selectorGrado" id="selectorGrado" class="selectItems" [(ngModel)]="matricula.gradoCursa" required>
+              <mat-option value="Primer Grado"> Primer Grado </mat-option>
+              <mat-option value="Segundo Grado"> Segundo Grado </mat-option>
+              <mat-option value="Tercer Grado"> Tercer Grado </mat-option>
+              <mat-option value="Cuarto Grado"> Cuarto Grado </mat-option>
+              <mat-option value="Quinto Grado">Quinto Grado</mat-option>
+              <mat-option value="Sexto Grado">Sexto Grado</mat-option>
+              <mat-option value="Séptimo año"> Séptimo año </mat-option>
+              <mat-option value="Octavo año"> Octavo año </mat-option>
+              <mat-option value="Noveno año"> Noveno año </mat-option>
+              <mat-option value="Décimo año"> Décimo año </mat-option>
+              <mat-option value="Undécimo año"> Undécimo año </mat-option>
+              <mat-option value="Duodécimo año"> Duodécimo año </mat-option>
+              <mat-option value="Bachillerato"> Bachillerato </mat-option>
+              <mat-option value="Aula Abierta"> Aula Abierta </mat-option>
+              <mat-option value="Educación Especial"> Educación Especial </mat-option>
+              <mat-option value="Universidad"> Universidad </mat-option>
+              <mat-option value="No estoy estudiando"> No estoy estudiando </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+
+        <div class="row my-3">
+          <div class="col">
+            <label for="convocatoria" class="form-label">¿En el {{periodo.anho-1}} reprobó alguna materia o fue a convocatoria?</label>
+            <mat-radio-group formControlName="convocatoria" [(ngModel)]="matricula.convocatoria" id="convocatoria">
+              <mat-radio-button class="" value="true">Si</mat-radio-button>
+              <mat-radio-button class="" value="false">No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col">
+            <label class="form-label">¿Cuál o cuáles materias reprobó o fue a convocatoria en el {{periodo.anho-1}}? </label>
+            <div *ngFor="let materia of materias">
+              <mat-checkbox [checked]="materia.checked"> {{materia.descripcion}}</mat-checkbox> <br />
+            </div>
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col">
+            <label class="form-label">Presenta el estudiante alguna necesidad educativa </label>
+            <div *ngFor="let necesidad of necesidades">
+              <mat-checkbox [checked]="necesidad.checked"> {{necesidad.descripcion}}</mat-checkbox> <br />
+            </div>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col">
+            <label class="form-label">¿Cuál dispositivo  electrónico tiene el estudiante  para recibir lecciones virtuales?</label>
+            <div *ngFor="let dispositivo of dispositivos">
+              <mat-checkbox [checked]="dispositivo.checked"> {{dispositivo.descripcion}}</mat-checkbox> <br />
+            </div>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col">
+            <label class="form-label">¿Cómo se conectaría a internet en caso de optar por clases virtuales?</label>
+            <div *ngFor="let opcion of internet">
+              <mat-checkbox [checked]="opcion.checked"> {{opcion.descripcion}}</mat-checkbox> <br />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <mat-grid-list cols="3" rowHeight="40px">
+              <mat-grid-tile [colspan]="1" [rowspan]="1">
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="1" [rowspan]="1">
+                <div class="navegacion">
+                  <button mat-raised-button matStepperPrevious>Anterior</button>
+                  <button mat-raised-button matStepperNext>Siguiente</button>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="1" [rowspan]="1">
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-step>
+  <mat-step [editable]="true">
+    <ng-template matStepLabel>Permanencia</ng-template>
+    <div class="container matriculaContainer" style="">
+      <form [formGroup]="permanencia">
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label class="form-label" for="selectorAnhos">Seleccione el año en que ingresó por primera vez a la fundación.: </label>
+            <mat-select matInput formControlName="selectorAnhos" id="selectorAnhos" class="selectItems" [(ngModel)]="matricula.anhoIngreso" required>
+              <mat-option *ngFor="let anhoIngreso of rangeAnhos" [value]="anhoIngreso">{{anhoIngreso}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="row my-3">
+          <mat-form-field class="col">
+            <label for="motivoIngreso" class="form-label">¿Cuéntenos por qué quiere estar en FundaVida?*</label>
+            <textarea matInput formControlName="motivoIngreso" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.direccion" id="motivoIngreso" rows="3" required></textarea>
+          </mat-form-field>
+        </div>
+
+
+      </form>
+    </div>
+
+    <div>
+      <mat-grid-list cols="3" rowHeight="40px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <div class="navegacion">
+            <button mat-raised-button matStepperPrevious>Anterior</button>
+            <button mat-raised-button matStepperNext>Siguiente</button>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-step>
+</mat-stepper>

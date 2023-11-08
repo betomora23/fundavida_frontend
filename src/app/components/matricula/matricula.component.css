@@ -1,0 +1,45 @@
+#gfg {
+  margin: 10px;
+}
+
+.mat-grid-tile-content{
+    height:40px;
+}
+
+.matriculaContainer {
+  position: relative;
+  width: 850px;
+  height: auto;
+  border: 3px solid lightgray;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.fundalogo{
+    width: 500px;
+}
+
+.centrado {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.negrita{
+    font-weight: bolder;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
