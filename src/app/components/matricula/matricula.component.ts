@@ -251,14 +251,15 @@ export class MatriculaComponent implements OnInit {
   private getNecesidades(): NecesidadEducativa[] {
     let mats = [
       { id: 1, descripcion: "Deficiencia visual ( usa lentes)", checked: false },
-      { id: 1, descripcion: "Deficiencia visual ( usa lentes)", checked: false },
-      { id: 2, descripcion: "Déficit atencional", checked: false },
-      { id: 3, descripcion: "Trastorno del espectro autista", checked: false },
-      { id: 4, descripcion: "Hiperactividad", checked: false },
-      { id: 5, descripcion: "Problemas motores", checked: false },
+      { id: 2, descripcion: "Deficiencia auditiva ( tiene problemas con la audición)", checked: false },
+      { id: 3, descripcion: "Déficit atencional", checked: false },
+      { id: 4, descripcion: "Trastorno del espectro autista", checked: false },
+      { id: 5, descripcion: "Hiperactividad", checked: false },
       { id: 6, descripcion: "Problemas motores", checked: false },
-      { id: 7, descripcion: "Problemas motores", checked: false },
-      { id: 8, descripcion: "Problemas motores", checked: false }
+      { id: 7, descripcion: "Problemas de lenguaje o de articulación", checked: false },
+      { id: 8, descripcion: "Dislexia", checked: false },
+      { id: 9, descripcion: "No presenta ninguna necesidad educativa", checked: false },
+      { id: 10, descripcion: "Otra", checked: false }
     ];
     return mats;
   }
@@ -268,15 +269,14 @@ export class MatriculaComponent implements OnInit {
       { id: 1, descripcion: "computadora", checked: false },
       { id: 1, descripcion: "tablet", checked: false },
       { id: 2, descripcion: "celular", checked: false },
-      { id: 3, descripcion: "celular", checked: false }
+      { id: 3, descripcion: "No tiene", checked: false }
     ];
     return mats;
   }
 
   private getInternet(): Opcion[] {
     let mats = [
-      { id: 1, descripcion: "internet por cable ( ej. Cable Tica, Telecable o Liberty)", checked: false },
-      { id: 1, descripcion: "internet por plan", checked: false },
+      { id: 1, descripcion: "internet por cable ( ej. Cable Tica, Telecable o Liberty)", checked: false },     
       { id: 2, descripcion: "internet por plan", checked: false },
       { id: 3, descripcion: "internet por recarga telefónica", checked: false },
       { id: 4, descripcion: "no cuento con internet", checked: false }

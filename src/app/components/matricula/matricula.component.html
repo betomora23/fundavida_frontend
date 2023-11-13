@@ -1,4 +1,4 @@
-<mat-stepper linear #stepper>
+<mat-stepper linear #stepper fxFlexFill>
   <mat-step [editable]="true">
     <ng-template matStepLabel>Pre-Matricula</ng-template>
     <div class="container matriculaContainer" style="">
@@ -17,18 +17,10 @@
       </span>
 
     </div>
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperNext>Siguiente</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
   <mat-step [editable]="true">
@@ -36,65 +28,47 @@
     <div class="container matriculaContainer" style="">
       <h2>¿Qué hacemos?</h2>
       <p>
-        FundaVida empodera niños, niñas y jóvenes a través de 5 programas educativos para aumentar sus oportunidades laborales y traer esperanza a sus comunidades.
-        Los cursos y talleres son totalmente  gratuitos para los participantes.
-
+        FundaVida empodera niños, niñas y jóvenes a través de 5 programas educativos para aumentar sus oportunidades laborales y traer esperanza a sus comunidades.<br/>
+        Los cursos y talleres son totalmente  gratuitos para los participantes.<br/>
         Estos son los programas:
       </p>
       <br />
-      <h3>Programa Jóvenes con Propósito</h3>
-      <p>
-        Acompañamos a los jóvenes brindándoles mentorías y charlas para nutrir su crecimiento personal y profesional.
-        Modalidad: presencial
-        Grado: sexto en adelante
-        No tiene cupo limitado, puede ingresar en cualquier momento del año.
-      </p>
-
+      <h3>Programa Jóvenes con Propósito</h3>      
+        Acompañamos a los jóvenes brindándoles mentorías y charlas para nutrir su crecimiento personal y profesional.<br />
+        <li>Modalidad: presencial</li>
+          <li>Grado: sexto en adelante</li>
+          <li>No tiene cupo limitado, puede ingresar en cualquier momento del año.</li>
       <br />
       <h3>Programa Centros Interactivos</h3>
-      <p>
-        Talleres de computación, robótica, programación, diseño gráfico e impresion 3D.
-        Modalidad: presencial y virtual
-        Grado: transición en adelante
-        Cupo limitado para algunas edades.
-      </p>
+        Talleres de computación, robótica, programación, diseño gráfico e impresion 3D.<br/>
+        <li>Modalidad: presencial y virtual</li>
+        <li>Grado: transición en adelante</li>
+        <li>Cupo limitado para algunas edades.</li>                     
       <br />
       <h3>Programa de Psicología</h3>
-      <p>
-        Consulta psicológica  y terapéutica exclusivamente para estudiantes admitidos en FundaVida.
-        Modalidad: presencial
-        Este programa tiene cupo limitado.
-      </p>
+        Consulta psicológica  y terapéutica exclusivamente para estudiantes admitidos en FundaVida.<br/>
+          <li>Modalidad: presencial</li>
+          <li>Este programa tiene cupo limitado.</li>
       <br />
-      <h3>Programa Apoyo Educativo</h3>
-      <p>
+      <h3>Programa Apoyo Educativo</h3>      
         Tutores ayudan a reforzar las materias de la escuela y colegio.
-        Modalidad: presencial
-        Grado: primero en adelante
-        Este programa tiene cupo limitado.
-      </p>
+      <li>Modalidad: presencial</li>
+      <li>Grado: primero en adelante</li>
+      <li>Este programa tiene cupo limitado.</li>      
       <br />
       <h3>Programa de Inglés</h3>
-      <p>
+      
         Los y las participantes adquieren las habilidades necesarias para ser bilingües.
-        Modalidad: presencial y virtual
-        Grados: transición en adelante
-        Este programa tiene cupo limitado.
-      </p>
+      <li>Modalidad: presencial y virtual</li>
+      <li>Grados: transición en adelante</li>
+      <li>Este programa tiene cupo limitado.</li>
+      
     </div>
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <div class="centrado">
           <div class="navegacion">
             <button mat-raised-button matStepperPrevious>Anterior</button>
             <button mat-raised-button matStepperNext>Siguiente</button>
           </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
     </div>
   </mat-step>
   <mat-step [editable]="true">
@@ -107,7 +81,6 @@
         <li>Estar estudiando en cualquier modalidad: escuela, colegio, IPEC, CINDEA, bachillerato por madurez o  maestro en casa, si es menor de edad.</li>
         <li>Autorizar la toma de fotografías y videos de los estudiantes mientras participan en los programas.</li>
         <li>Presentar el informe final de aprovechamiento o nota del año {{periodo.anho-1}} dada por el centro educativo de manera  impresa.</li>
-        <li>Presentar comprobante con al menos 2 dosis de vacuna contra COVID19.</li>
         <li>Ofrecemos capacitación tecnológica e inglés para mayores de edad. Si está interesado(a), debe llenar el formulario.</li>
       </ul>
       <span class="negrita">
@@ -115,19 +88,11 @@
       </span>
     </div>
 
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperNext>Anterior</button>
-            <button mat-raised-button matStepperNext>Siguiente</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperPrevious>Anterior</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
   <mat-step [stepControl]="datosEstudiante" [editable]="true">
@@ -190,7 +155,7 @@
         <div class="row my-3">
           <mat-form-field class="col">
             <label for="telefonoEstudiante" class="form-label">Número de teléfono:</label>
-            <input matInput formControlName="telefonoEstudiante" type="text" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.telefono" id="telefonoEstudiante" placeholder="" required>
+            <input matInput formControlName="telefonoEstudiante" type="number" ng-maxlength="8" ng-minlength="8" class="form-control form-control-sm" [(ngModel)]="matricula.estudiante.persona.telefono" id="telefonoEstudiante" placeholder="1234-1234" required>
           </mat-form-field>
         </div>
         <div class="row my-3">
@@ -234,19 +199,11 @@
         </div>
       </form>
     </div>
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperPrevious>Anterior</button>
-            <button mat-raised-button matStepperNext>Siguiente</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperPrevious>Anterior</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
   <mat-step [editable]="true">
@@ -308,20 +265,11 @@
         </div>
       </form>
     </div>
-
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperPrevious>Anterior</button>
-            <button mat-raised-button matStepperNext>Siguiente</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperPrevious>Anterior</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
   <mat-step [editable]="true">
@@ -405,19 +353,11 @@
         </div>
       </form>
     </div>
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperPrevious>Anterior</button>
-            <button mat-raised-button matStepperNext>Siguiente</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperPrevious>Anterior</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
   <mat-step [editable]="true">
@@ -441,21 +381,13 @@
 
 
       </form>
-      <input type="button" value="Enviar Datos" (click)="onSubmit()">
+      <button mat-raised-button color="primary" (click)="onSubmit()">Enviar Datos</button>
     </div>
-
-    <div>
-      <mat-grid-list cols="3" rowHeight="40px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-          <div class="navegacion">
-            <button mat-raised-button matStepperPrevious>Anterior</button>
-          </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-        </mat-grid-tile>
-      </mat-grid-list>
+    <div class="centrado">
+      <div class="navegacion">
+        <button mat-raised-button matStepperPrevious>Anterior</button>
+        <button mat-raised-button matStepperNext>Siguiente</button>
+      </div>
     </div>
   </mat-step>
 </mat-stepper>

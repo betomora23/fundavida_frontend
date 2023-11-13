@@ -2,13 +2,36 @@
   margin: 10px;
 }
 
+@media (max-width: 1080px) {
+  .fundalogo {
+    width: 500px;
+  }
+}
+@media (max-width: 800px) {
+  .fundalogo {
+    width: 500px;
+  }
+}
+@media (max-width: 450px) {
+  .fundalogo {
+    width: 300px;
+  }
+}
+@media (max-width: 350px) {
+  .fundalogo {
+    width: 250px;
+  }
+}
+
+
+
+
 .mat-grid-tile-content{
     height:40px;
 }
 
 .matriculaContainer {
   position: relative;
-  width: 850px;
   height: auto;
   border: 3px solid lightgray;
 }
@@ -21,12 +44,9 @@
   transform: translateY(-50%);
 }
 
-.fundalogo{
-    width: 500px;
-}
+
 
 .centrado {
-  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
