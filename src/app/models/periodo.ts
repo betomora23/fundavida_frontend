@@ -3,4 +3,6 @@ export interface Periodo {
   descripcion: string;
   anho: number;
   activo: boolean;
+  qrImage: string;
+  qrUrl: string;
 }

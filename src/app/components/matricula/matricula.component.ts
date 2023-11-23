@@ -51,8 +51,14 @@ export class MatriculaComponent implements OnInit {
   public periodo: Periodo;
   public rangeAnhos: string[];
 
+  private cedulaValidators = [
+         Validators.maxLength(10),
+         Validators.minLength(9),
+         Validators.pattern(/^[0-9]*$/)
+  ];
+
   datosEstudiante = this._formBuilder.group({
-    identificacionEstudiante: ['', Validators.required],
+    identificacionEstudiante: ['', Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(9),Validators.pattern(/^[0-9]*$/)]) ],
     selectTipoId: ['', Validators.required],
     nombreEstudiante: ['', Validators.required],
     apellido2Estudiante: ['', Validators.required],
@@ -98,8 +104,11 @@ export class MatriculaComponent implements OnInit {
       id: 1,
       descripcion: "2024",
       anho: 2024,
-      activo: true
+      activo: true,
+      qrImage:"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",
+      qrUrl:"www.link.com"
     };
+    this.progSelected = [];
     this.sedes = [{ id:1, descripcion:"Sede 1" }, { id:2, descripcion:"Sede 2" }];
     this.centros = [{ id:1, descripcion:"Centro 1" }, { id:2, descripcion:"Centro 2" }];
     this.matricula = this.newMatricula();
@@ -120,7 +129,6 @@ export class MatriculaComponent implements OnInit {
       "Singapur", "Somalia", "Sri Lanka", "Sudáfrica", "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Suriname", "Swazilandia", "Tailandia", "Tayikistán", "Timor-Leste", "Togo", "Tonga",
       "Trinidad y Tabago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Viet Nam", "Yemen", "Zambia", "Zimbabwe"];    
     this.rangeAnhos = this.createRange();
-    this.progSelected = [];
       this.programas = [
       {
         id: 1,
@@ -158,24 +166,47 @@ export class MatriculaComponent implements OnInit {
 
   }
 
+  cambiarValidadores(data:any):void {
+    console.log("Cambio de valor detectado");
+    console.log(this.matricula.estudiante.persona);
+    console.log(data.value);
+   if(data.value == TipoIdentificacion.CEDULA) {
+     console.log('Valida como cedula');
+      this.datosEstudiante.get('identificacionEstudiante')!.setValidators(this.cedulaValidators);
+    } else {
+      this.datosEstudiante.get('identificacionEstudiante')!.setValidators(Validators.required);
+      console.log('Valida solo ingreso');
+    }
+
+  }
+
   onSubmit(): void {
     // Process checkout data here
     console.warn('Your order has been submitted', this.matricula);
     console.warn('Estudiante: '+this.matricula.estudiante.persona.nombre);
+    this.progSelected = [];
+
+    for (let val of this.dispositivos ) {
+      val.checked=false;
+    }
+    for (let val of this.internet ) {
+      val.checked=false;
+    }
+
 
     this.matricula = this.newMatricula();
     window.scroll(0, 0);
   }
-  
+
   private createRange() {
     // return new Array(number);
     let anhoInicio = this.periodo.anho-1;
     return new Array(15).fill("")
       .map((n, index) => "" + (anhoInicio - index));
   }
+
+
   
-
-
   private newMatricula(): Matricula {
     let newMatricula = {
       id: -1,
