@@ -391,12 +391,16 @@
   </mat-step>
   <mat-step [editable]="false">
     <ng-template matStepLabel>Gracias</ng-template>
-    Sus datos se han registrado con éxito
+    <div class="container matriculaContainer" style="">
+      Sus datos se han registrado con éxito
 
-    Por favor ingresar al siguiente grupo de whatsapp
-    <img style='display:block; width:100px;height:100px;' id='base64image'
-         src='data:image/jpeg;base64,{{periodo.qrImage}}' />
-    <a href="{{periodo.qrUrl}}">Chat</a>
+      Por favor ingresar al siguiente grupo de whatsapp
+      <img style='display:block; width:100px;height:100px;' id='base64image'
+           src='data:image/jpeg;base64,{{periodo.qrImage}}' />
+      <a href="{{periodo.qrUrl}}">Chat</a>
+      <a href="{{periodo.qrUrl}}">Nuevo Registro</a>
+    </div>
+
 
   </mat-step>
 
